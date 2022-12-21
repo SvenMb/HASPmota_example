@@ -1,0 +1,50 @@
+{"page":1,"comment":"---------- Page 1 ----------"}
+{"id":0,"bg_color":"#A00000","bg_grad_color":"#000000","bg_grad_dir":1,"text_color":"#FFFFFF","border_color":"#606060"}
+{"id":1,"obj":"label","x":32,"y":208,"w":256,"h":32,"pad_left":2,"text":"\uE6A1 Wohnzimmer","text_font":24,"border_color":"#606060"}
+{"id":10,"obj":"btn",    "x":0,  "y":0,  "w":104,"h":102,"toggle":false,"bg_color":"#000000","border_width":3,"border_color":"#606060","radius":10,"text":"\uE769","text_font":"robotocondensed-24","align":1}
+{"berry_run":"tasmota.add_rule('POWER1#State', def (state) global.p1b10.get_obj().set_style_bg_color(lv.color(state ? 0xffffff : 0x000000), lv.PART_MAIN | lv.STATE_DEFAULT) global.p1b10.get_obj().set_style_text_color(lv.color(state ? 0x000000 : 0xffffff), lv.PART_MAIN | lv.STATE_DEFAULT) end)"}
+{"berry_run":"tasmota.add_rule('hasp#p1b10#event==up', / -> tasmota.set_power(0,!tasmota.get_power()[0]))"}
+
+{"id":11,"obj":"lv_tuya","x":0,  "y":105,"w":104,"h":102,"toggle":false,"bg_color":"#000000","border_width":3,"border_color":"#606060","radius":10,"text":"\uE95F","text_font":"robotocondensed-24","align":1}
+{"berry_run":"lv_tuya_add(p1b11,'tuya/standleuchte',lv_tuya.DEV_WHITE)"}
+{"berry_run":"p1b11.get_obj().v_ctemp_range=[154,450]"}
+
+{"id":12,"obj":"lv_tuya","x":108,"y":0,  "w":104,"h":102,"toggle":false,"bg_color":"#000000","border_width":3,"border_color":"#606060","radius":10,"text":"\uE8DD","text_font":"robotocondensed-24","align":1}
+{"berry_run":"lv_tuya_add(p1b12,'tuya/vorne_1')"}
+{"berry_run":"lv_tuya_add(p1b12,'tuya/vorne_2')"}
+{"berry_run":"lv_tuya_add(p1b12,'tuya/vorne_3')"}
+{"berry_run":"p1b12.get_obj().v_ctemp_range=[154,450]"}
+
+{"id":13,"obj":"lv_tuya","x":108,"y":105,"w":104,"h":102,"toggle":false,"bg_color":"#000000","border_width":3,"border_color":"#606060","radius":10,"text":"\uF2BA","text_font":"robotocondensed-24","align":1}
+{"berry_run":"lv_tuya_add(p1b13,'tuya/ambiente',lv_tuya.DEV_RGB)"}
+
+{"id":14,"obj":"btn","x":216,  "y":0,  "w":104,"h":102,"toggle":true,"border_width":3,"radius":10,"text":"<*)XX><","text_font":"montserrat-20","align":1}
+{"id":17,"obj":"lv_dht","x":216,"y":105,"w":104,"h":64,"border_width":0,"radius":10,"text_font":"robotocondensed-24"}
+
+{"page":2,"comment":"---------- Page 2 ----------"}
+{"id":0,"bg_color":"#00A000","bg_grad_color":"#000000","bg_grad_dir":1,"text_color":"#FFFFFF"}
+{"id":1,"obj":"label","x":40,"y":208,"w":240,"h":24,"text":"\uEA70 Esszimmer","text_font":24}
+{"id":10,"obj":"lv_tuya","x":0,  "y":0,  "w":104,"h":102,"toggle":false,"bg_color":"#000000","border_width":3,"border_color":"#606060","radius":10,"text":"\uE769","text_font":"robotocondensed-24","align":1}
+{"berry_run":"lv_tuya_add(p2b10,'tuya/esszimmer_1')"}
+{"berry_run":"lv_tuya_add(p2b10,'tuya/esszimmer_2')"}
+{"berry_run":"lv_tuya_add(p2b10,'tuya/esszimmer_3')"}
+{"berry_run":"lv_tuya_add(p2b10,'tuya/esszimmer_4')"}
+{"berry_run":"lv_tuya_add(p2b10,'tuya/esszimmer_5')"}
+{"berry_run":"p2b10.get_obj().v_ctemp_range=[154,450]"}
+
+{"page":3,"comment":"---------- Page 3 ----------"}
+{"id":0,"bg_color":"#0000FF","bg_grad_color":"#000020","bg_grad_dir":1,"text_color":"#FFFFFF"}
+{"id":10,"obj":"img","src":"A:/wlan.bin","auto_size":1,"x":0,"y":0}
+{"id":11,"obj":"img","src":"tasmota.bin","auto_size":1,"x":228,"y":42}
+{"id":12,"obj":"lv_tasmota_info","x":200,"y":160,"w":120,"h":40,"radius":10}
+
+{"comment":"---------- All Pages ----------"}
+{"page":0,"id":1,"obj":"lv_clock","x":200,"y":216,"w":55,"h":24,"radius":0,"border_side":0,"text_color":"#FFFFFF"}
+{"page":0,"id":2,"obj":"lv_wifi_arcs","x":259,"y":214,"w":29,"h":22,"radius":0,"border_side":0,"bg_color":"#404040","line_color":"#FFFFFF"}
+{"page":0,"id":3,"obj":"btn","action":"prev","x":0,"y":208,"w":32,"h":32,"text":"\uE141","text_color":"#FFFFFF", "bg_color":"#1fa3ec", "radius":10,"border_side":1,"text_font":"robotocondensed-24"}
+{"page":0,"id":4,"obj":"btn","action":"next","x":288,"y":208,"w":32,"h":32,"text":"\uE142","text_color":"#FFFFFF", "bg_color":"#1fa3ec","radius":10,"border_side":1,"text_font":"robotocondensed-24"}
+
+
+{"comment":"---------- Limit page prev/next between 1 and 3 ----------"}
+{"page":1,"id":0,"prev":3}
+{"page":3,"id":0,"next":1}
