@@ -58,6 +58,7 @@ class lv_tuya : lv.btn
     self.br_label=lv.label(self)
     self.br_label.set_text("offline")
     self.br_label.set_align(lv.ALIGN_BOTTOM_MID)
+    self.br_label.set_pos(0,4)
 
     self.delay = 1
 
@@ -142,7 +143,7 @@ class lv_tuya : lv.btn
       return false
     end
     self.show()
-    return false
+    return true
   end
 
   def clicked_cb()
@@ -452,8 +453,8 @@ class lv_tuya : lv.btn
   #end
 
   def show()
-    var bg=0
-    var text=0xffffff # default black
+    var bg=0 # black
+    var text=0xffffff # default white
     var br="" # brightness label
     if self.v_state==1 # light is on
 

@@ -2,7 +2,7 @@ import haspmota
 import string
 import lv_tuya
 
-def lv_tuya_add
+def add
   (haspobj,topic,devtype)
   haspobj.get_obj().add(topic)
   if devtype != nil
@@ -21,7 +21,7 @@ end
 def DisplayOFF()
   tasmota.set_power(1,false)
   tasmota.set_power(2,false)
-  global.p3.show()
+  # global.p3.show()
   tasmota.set_timer(500,ObjOFF)
   tasmota.remove_timer("timerDisplayChack")
 end
