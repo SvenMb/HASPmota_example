@@ -55,39 +55,39 @@ class lv_sp1 : lv.btn
   end
 
   def recv(topic,idx,payload_s,payload_b)
-    print("topic:   ",topic)
-    print("payload: ",payload_s)
+    # print("topic:   ",topic)
+    # print("payload: ",payload_s)
     var t=string.split(topic,"/",2)[-1]
     # print("t:       ",t)
     # power on/off
     if t=='POWER'
       if payload_s=="ON"
-        print("State change! ON!!")
+        # print("State change! ON!!")
         self.v_state=1
       elif payload_s=="OFF"
-        print("State change! OFF!!")
+        # print("State change! OFF!!")
         self.v_state=0
       end
     elif (t=="STATE")
       var j=json.load(payload_s)
       var pow=j.find('POWER')
       if pow=="ON"
-        print("STATE change! ON!!")
+        # print("STATE change! ON!!")
         self.v_state=1
       elif pow=="OFF"
-        print("STATE change! OFF!!")
+        # print("STATE change! OFF!!")
         self.v_state=0
       end
     elif (t=="STATUS8")
       var j=json.load(payload_s)
       self.v_values=j.find('StatusSNS',[]).find('ENERGY')
-      print("Energy:",self.v_values)
+      # print("Energy:",self.v_values)
     elif (t=="SENSOR")
       var j=json.load(payload_s)
       self.v_values=j.find('ENERGY')
-      print("EnergY:",self.v_values)
+      # print("EnergY:",self.v_values)
     elif (t=="LWT" && payload_s=="offline")
-      print("Offline")
+      # print("Offline")
       self.v_state=2
     end
     self.show()

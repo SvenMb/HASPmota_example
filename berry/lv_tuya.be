@@ -50,7 +50,8 @@ class lv_tuya : lv.btn
     self.v_mode = 0
     self.v_brightness = 100
     self.v_ctemp = 300
-    self.v_ctemp_range=[0,100]
+    # self.v_ctemp_range=[0,100]
+    self.v_ctemp_range=[154,450]
     self.v_cbrightness = 100
     self.v_saturation = 100
     self.v_hue = 0

@@ -40,6 +40,12 @@
 {"id":15,"obj":"lv_sp1" ,"x":216,"y":105,"w":104,"h":102,"text":"Horst","text_font":32}
 {"berry_run":"add(p2b15,'horst')"}
 
+{"page":3,"comment":"---------- Page 3 ----------"}
+{"id":0,"bg_color":"#0000FF","bg_grad_color":"#000020","bg_grad_dir":1,"text_color":"#FFFFFF"}
+{"id":10,"obj":"img","src":"A:/wlan.bin","auto_size":1,"x":60,"y":0}
+{"comment":11,"obj":"img","src":"tasmota.bin","auto_size":1,"x":228,"y":42}
+{"comment":12,"obj":"lv_tasmota_info","x":200,"y":160,"w":120,"h":40,"radius":10}
+
 
 {"comment":"---------- All Pages ----------"}
 {"page":0,"id":1,"obj":"lv_clock","x":200,"y":216,"w":55,"h":24,"text_color":"#FFFFFF"}
@@ -49,6 +55,5 @@
 
 
 {"comment":"---------- Limit page prev/next between 1 and 3 ----------"}
-{"page":1,"id":0,"prev":2}
-{"page":2,"id":0,"next":1}
-🔥 📝
+{"page":1,"id":0,"prev":3}
+{"page":3,"id":0,"next":1}
