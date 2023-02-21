@@ -6,7 +6,7 @@ This small demo shows how to use the AZ-Touch Mode case, which integrates a ESP3
 
 Following the basic install you can use display and touch for HASPmota or LVGL within tasmota. More documentation is here: https://tasmota.github.io/docs/HASPmota/
 
-# Install
+## Install
 
 Simplest way to install a fitting tasmota on your ESP32-devkit is to use the [web-installer](https://tasmota.github.io/install/)
 and install the Tasmota32-LVGL binary.
@@ -30,3 +30,6 @@ is correct only for displayrotate 2 and the 2.8" display variant.
 
 A more complex configuration variant and some beery classes are found in the reminding files here.
 
+## SDCard
+
+if you like to use the SDCard, you have to connect SDCard_cs to GPIO-16 and SDCard-Miso, -Mosi, -Sck to the already connected DISPLAY-signals Miso/Mosi/Sck.
