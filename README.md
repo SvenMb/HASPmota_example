@@ -2,7 +2,7 @@
 
 **Warning** using LVGL and Haspmota with a ESP32 without PSRam seems to be very unstable.
 
-**second Warnin** when using breadboard instead, the original board allows to use a 40MHz SPI-speed. When trying a experimental build on a breadboard I got a lot of display errrors. I recommend to lower the speed when using a breadboard, I was succesful at only 1MHz. The SPI-speed is defined at :H line, last number, so change it from 40 to 1 if using a breadboard.
+**second Warnin** when using breadboard instead, the original board allows to use a 40MHz SPI-speed. When trying a experimental build on a breadboard I got a lot of display errrors. I recommend to lower the speed when using a breadboard, I was succesful at only 1MHz. The SPI-speed is defined at ":H" line in display.ini, last number, so change it from 40 to 1 if using a breadboard.
 
 This small demo shows how to use the AZ-Touch Mode case, which integrates a ESP32-Devkit, a ILI9341 320x240 display with xpt2046 touch and a 5V regulator.
 
