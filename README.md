@@ -12,8 +12,9 @@ Simplest way to install a fitting tasmota on your ESP32-devkit is to use the [we
 and install the Tasmota32-LVGL binary.
 
 Configure the gpio-template, insert it in to the webinterface on "Configuration->Configure other"
-    {"NAME":"ESP32 AZ-Touch","GPIO":[0,1,1,1,800,768,0,0,1088,224,7264,448,6720,1184,736,672,1,480,1024,704,1,1,1,0,0,0,0,0,0,1,1,1,1,0,6210,1],"FLAG":0,"BASE":1}
-
+~~~display.ini
+{"NAME":"ESP32 AZ-Touch","GPIO":[0,1,1,1,800,768,0,0,1088,224,7264,448,6720,1184,736,672,1,480,1024,704,1,1,1,0,0,0,0,0,0,1,1,1,1,0,6210,1],"FLAG":0,"BASE":1}
+~~~
 When you check that gpio-config in "Configuration->Configure Template", you will find that I also added a SDCARD, a DHT11 and a relay, you can remove them there if you don't like them, they are not needed for basic functions.
 
 You should now switch on the last two switches in that tasmota web-interface, they control the display-backlight and the display-controler, since tasmota has no backlight_i.
