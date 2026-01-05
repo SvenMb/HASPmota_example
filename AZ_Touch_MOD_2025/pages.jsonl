@@ -1,0 +1,65 @@
+{"page":1,"comment":"---------- Page 1 ----------"}
+{"id":0,"bg_color":"#A00000","bg_grad_color":"#000000","bg_grad_dir":1,"text_color":"#ffffff"}
+{"id":1, "obj":"label",  "x":74,"y":291,"w":30,"h": 24,"text":"\uE6A1","text_font":24}
+
+{"id":10,"obj":"btn","x":0  ,"y":0  ,"w":118,"h":95,"toggle":false,"text":"\uE769","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"id":11,"parentid":10,"obj":"label","x":18,"y":0,"w":100,"h":32,"text":"Decke","text_font":16}
+{"berry_run":"p1b10.set_toggle(tasmota.get_power(0))"}
+{"berry_run":"tasmota.add_rule('POWER1#State', / state -> p1b10.set_toggle(state))"}
+{"berry_run":"tasmota.add_rule('hasp#p1b10#event=up', / -> tasmota.set_power(0,!tasmota.get_power()[0]))"}
+
+{"id":20,"obj":"lv_sp1","x":121,"y":0,  "w":118,"h":95,"toggle":false,"text":"\uE95F","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p1b20.get_obj().add_label('Sofa')"}
+
+{"id":30,"obj":"lv_sp1","x":0,  "y":97, "w":118,"h":95,"toggle":false,"text":"\uE8DD","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p1b30.get_obj().add_label('Vorne')"}
+
+{"id":40,"obj":"lv_sp1","x":121,"y":97, "w":118,"h":95,"toggle":false,"text":"\uF2BA","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p1b40.get_obj().add('ozzi')"}
+{"berry_run":"p1b40.get_obj().add_label('Ozzi')"}
+
+
+{"id":50,"obj":"lv_sp1","x":0,"y":194,"w":118,"h":95,"toggle":false,"text":"\uF2BA","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p1b50.get_obj().add('fische')"}
+{"berry_run":"p1b50.get_obj().add_label('Lichter')"}
+
+{"id":60,"obj":"label","x":123,"y":194,"w":116,"h":24,"text":"\uE50F --.-°C","text_rule":"DHT11#Temperature", "text_rule_formula":"val","text_rule_format":"\uE50F %2.1f°C","text_font":24}
+
+{"id":61,"obj":"lv_watt","x":123,"y":222,"w":116,"h":24,"text":"\uF40B ----W","text_rule":"SOLAR#power", "text_rule_formula":"val","text_rule_format":"\uF40B %4dW","text_font":24}
+{"comment":"p1b61.get_obj().add('pmog/status/pm1:0','apower','\uF40B %4dW')"}
+{"berry_run":"p1b61.get_obj().add('tele/smartmeter/SENSOR','DWSB/Power_cur','\uF40B %dW')"}
+{"berry_run":"import mqtt mqtt.publish('cmnd/smartmeter/TelePeriod','30')"}
+
+{"id":62,"obj":"lv_watt","x":123,"y":250,"w":116,"h":24,"text":"\uE5A8 ----W","text_rule":"DWSB#DWSB", "text_rule_formula":"val","text_rule_format":"\uE5A8 %4dW","text_font":24}
+{"berry_run":"p1b62.get_obj().add('solar/ac/power',nil,'\uE5A8 %dW')"}
+
+{"page":2,"comment":"---------- Page 2 ----------"}
+{"id":0,"bg_color":"#00A000","bg_grad_color":"#000000","bg_grad_dir":1,"text_color":"#ffffff","text_font":24}
+{"id":1,"obj":"label","x":72,"y":291,"w":30,"h":24,"text":"\uEA70"}
+
+{"id":10,"obj":"lv_sp1","x":0,"y":0,  "w":118,"h":95,"toggle":false,"text":"\uE322","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p2b10.get_obj().add_label('Esszimmer')"}
+{"berry_run":"p2b10.get_obj().add('esszimmer')"}
+
+{"id":20,"obj":"lv_sp1","x":121,"y":0,  "w":118,"h":95,"toggle":false,"text":"\uEC99","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p2b20.get_obj().add('3d_druck')"}
+{"berry_run":"p2b20.get_obj().add_label('3D-Druck')"}
+
+
+{"page":3,"comment":"---------- Page 3 ----------"}
+{"id":0,"bg_color":"#0000FF","bg_grad_color":"#000020","bg_grad_dir":1,"text_color":"#FFFFFF"}
+{"id":1,"obj":"label","x":72,"y":291,"w":30,"h":24,"text":"\uEA70","text_font":24}
+
+{"comment":"---------- All Pages ----------"}
+{"page":0,"id":0,"dimming_time":1,"dimming_min":35,"dimming_duration":30}
+
+{"page":0,"id":1,"obj":"lv_clock","x":104,"y":296,"w":55,"h":22,"text_color":"#FFFFFF"}
+
+{"page":0,"id":3,"obj":"btn","action":"prev","x":0,  "y":290,"w":65,"h":29,"text":"\uE141","text_color":"#FFFFFF", "bg_color":"#1fa3ec", "radius":10,"border_side":1,"text_font":"robotocondensed-24"}
+
+{"page":0,"id":4,"obj":"btn","action":"next","x":174,"y":290,"w":65,"h":29,"text":"\uE142","text_color":"#FFFFFF", "bg_color":"#1fa3ec","radius":10,"border_side":1,"text_font":"robotocondensed-24"}
+
+
+{"comment":"---------- Limit page prev/next between 1 and 3 ----------"}
+{"page":1,"id":0,"prev":3}
+{"page":3,"id":0,"next":1}
