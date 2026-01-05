@@ -9,9 +9,9 @@ class lv_sp1 : lv.btn
   var b_label
   var t_label
   var v_topic
-  var v_state 
+  var v_state
   var v_values
- 
+
   def init(parent)
     super(self).init(parent)
     self.parent=parent
@@ -25,7 +25,7 @@ class lv_sp1 : lv.btn
     self.v_topic = ""
     self.v_values= {}
     self.v_state = 2 # (0: off, 1: on, 2: offline)
-    
+
     self.b_label=lv.label(self)
     self.b_label.set_style_text_font(lv.montserrat_font(20), lv.PART_MAIN | lv.STATE_DEFAULT) 
     self.b_label.set_align(lv.ALIGN_BOTTOM_MID)
@@ -42,7 +42,7 @@ class lv_sp1 : lv.btn
     # no regular action needed
     # tasmota.add_driver(self)
   end
-  
+
   def add_label(topic)
     self.t_label=lv.label(self)
     self.t_label.set_style_text_font(lv.montserrat_font(20), lv.PART_MAIN | lv.STATE_DEFAULT) 

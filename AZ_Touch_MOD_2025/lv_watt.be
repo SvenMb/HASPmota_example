@@ -9,7 +9,7 @@ class lv_watt : lv.label
   var v_topic
   var v_json
   var v_fmt
- 
+
   def init(parent)
     super(self).init(parent)
     self.parent=parent
@@ -47,7 +47,7 @@ class lv_watt : lv.label
       j=j.find(string.split(self.v_json,"/")[0])
       if string.split(self.v_json,"/").size() < 2
         pw=j
-      else 
+      else
         pw=j.find(string.split(self.v_json,"/")[1])
       end
     end
