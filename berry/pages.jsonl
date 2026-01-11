@@ -9,9 +9,11 @@
 {"berry_run":"tasmota.add_rule('hasp#p1b10#event=up', / -> tasmota.set_power(0,!tasmota.get_power()[0]))"}
 
 {"id":20,"obj":"lv_sp1","x":121,"y":0,  "w":118,"h":95,"toggle":false,"text":"\uE95F","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p1b20.get_obj().add('sofa')"}
 {"berry_run":"p1b20.get_obj().add_label('Sofa')"}
 
 {"id":30,"obj":"lv_sp1","x":0,  "y":97, "w":118,"h":95,"toggle":false,"text":"\uE8DD","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
+{"berry_run":"p1b30.get_obj().add('vorne')"}
 {"berry_run":"p1b30.get_obj().add_label('Vorne')"}
 
 {"id":40,"obj":"lv_sp1","x":121,"y":97, "w":118,"h":95,"toggle":false,"text":"\uF2BA","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
@@ -20,7 +22,7 @@
 
 
 {"id":50,"obj":"lv_sp1","x":0,"y":194,"w":118,"h":95,"toggle":false,"text":"\uF2BA","text_font":"montserrat-28","radius":10,"border_color":"white","border_width":3,"text_color01":"yellow","bg_color":"black"}
-{"berry_run":"p1b50.get_obj().add('fische')"}
+{"berry_run":"p1b50.get_obj().add('lichter')"}
 {"berry_run":"p1b50.get_obj().add_label('Lichter')"}
 
 {"id":60,"obj":"label","x":123,"y":194,"w":116,"h":24,"text":"\uE50F --.-°C","text_rule":"DHT11#Temperature", "text_rule_formula":"val","text_rule_format":"\uE50F %2.1f°C","text_font":24}
